@@ -16,7 +16,7 @@ app.use(express.json());
 // to access the API endpoint without triggering the CORS error.
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: `${process.env.BASE_URL}`,
   })
 );
 app.use("/images", express.static(path.join(__dirname, "/images")));
