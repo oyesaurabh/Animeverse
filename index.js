@@ -2,12 +2,11 @@ const express = require("express");
 const app = express();
 const connectDB = require("./db/connect");
 const path = require("path");
-const cors = require("cors");// to allow localhost:5173 to run with localhost:3000
+const cors = require("cors"); // to allow localhost:5173 to run with localhost:3000
 const multer = require("multer"); //for storing images
 require("dotenv").config();
 
 const authRoute = require("./routes/auth");
-// const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 
@@ -41,7 +40,6 @@ app.post("/api/v1/upload", upload.single("file"), (req, res) => {
 
 /*** ROUTES ***/
 app.use("/api/v1/auth", authRoute);
-// app.use("/api/v1/users", userRoute);
 app.use("/api/v1/posts", postRoute);
 app.use("/api/v1/category", categoryRoute);
 /* END */
