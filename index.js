@@ -17,6 +17,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: true,
+    methods: ["GET", "POST", "PUT", "DELETE"], // list of allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // list of allowed headers
   })
 );
 app.use("/images", express.static(path.join(__dirname, "/images")));
